@@ -22,7 +22,7 @@ runs:
     - name: Set Swap
       shell: bash
       run: |
-          export SWAP_FILE=/mnt/swapfile2
+          export SWAP_FILE=/tmp/swapfile
           fallocate -l ${{ inputs.swap-size-gb }}G $SWAP_FILE
           chmod 600 $SWAP_FILE
           mkswap $SWAP_FILE
