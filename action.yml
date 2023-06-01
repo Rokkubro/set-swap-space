@@ -23,6 +23,7 @@ runs:
       shell: bash
       run: |
           export SWAP_FILE=$(swapon --show=NAME | tail -n 1)
+          echo $SWAP_FILE
           swapoff $SWAP_FILE
           rm $SWAP_FILE
           fallocate -l ${{ inputs.swap-size-gb }}G $SWAP_FILE
